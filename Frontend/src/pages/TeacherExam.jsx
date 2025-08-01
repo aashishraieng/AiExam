@@ -73,12 +73,13 @@ const TeacherExam = () => {
             return;
         }
         
+        // ✅ FIXED: Convert local date/time to a full UTC ISO string
         const payload = {
             examDetails: {
                 ...examDetails,
                 description: `Exam for ${examDetails.department}, Semester ${examDetails.semester}`,
-                startTime: `${examDetails.date}T${examDetails.startTime}:00`,
-                endTime: `${examDetails.date}T${examDetails.endTime}:00`,
+                startTime: new Date(`${examDetails.date}T${examDetails.startTime}`).toISOString(),
+                endTime: new Date(`${examDetails.date}T${examDetails.endTime}`).toISOString(),
             },
             questions: questions.map(q => {
                 const { options, ...rest } = q;

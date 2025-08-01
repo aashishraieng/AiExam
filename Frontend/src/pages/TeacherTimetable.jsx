@@ -35,11 +35,13 @@ const TeacherTimetable = () => {
       return;
     }
 
-    // Combine date and time for backend
+    // ✅ FIXED: Combine date and time correctly into a full UTC ISO string
     const submissionData = {
         ...form,
-        startTime: `${form.date}T${form.startTime}:00`,
-        endTime: `${form.date}T${form.endTime}:00`,
+        // By creating a Date object from the local date/time parts,
+        // .toISOString() will convert it to a standardized UTC string.
+        startTime: new Date(`${form.date}T${form.startTime}`).toISOString(),
+        endTime: new Date(`${form.date}T${form.endTime}`).toISOString(),
     };
 
     try {
