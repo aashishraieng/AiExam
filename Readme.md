@@ -29,58 +29,6 @@ Backend	Node.js, Express.js
 Database	MongoDB
 Deployment	Render
 
-Export to Sheets
-Getting Started 🚀
-Prerequisites
-Node.js
-
-npm (or yarn)
-
-MongoDB
-
-Installation
-Clone the repository:
-
-Bash
-
-git clone https://github.com/your-repo/aiexam.git
-cd aiexam
-Install backend dependencies:
-
-Bash
-
-cd src 
-npm install
-Install frontend dependencies:
-
-Bash
-
-cd ../src
-npm install
-Configuration
-Backend Environment Variables: Create a .env file in the src directory and add the following:
-
-MONGO_URI: Your MongoDB connection string.
-
-JWT_SECRET: A secret key for JWT token generation.
-
-Frontend Environment Variables: Create a .env file in the src directory and add your backend API URL:
-
-VITE_API_BASE_URL: The URL of your backend server.
-
-Running the Application
-Start the backend server:
-
-Bash
-
-cd src
-npm start
-Start the frontend development server:
-
-Bash
-
-cd ../src
-npm run dev
 Project Structure 📁
 ├── src               # Frontend
 │   ├── assets
@@ -98,14 +46,6 @@ Project Structure 📁
 │   └── utils
 └── server.js         # Backend server entry point
 
-
-
-
-
-
-
-
-Of course, here is a brief description of each file and folder in your project.
 
 Backend (src directory)
 server.js: The main entry point for your backend application. It sets up the Express server, connects to MongoDB, and registers all the API routes.
@@ -272,8 +212,6 @@ handleToken.js: Contains functions for managing JWT tokens in local storage.
 Prerequisites
 Before you begin, make sure you have the following installed on your computer:
 
-Git: To clone the repository. Download Git
-
 Node.js and npm: To run the JavaScript code for both frontend and backend. Download Node.js (npm is included).
 
 MongoDB: The database for your application. You can install it locally or use a free cloud service like MongoDB Atlas. Get MongoDB
@@ -294,7 +232,7 @@ Navigate to the Backend Directory:
 
 Bash
 
-cd src1
+cd src
 Install Dependencies:
 This command reads the package.json file and installs all the necessary Node.js modules.
 
@@ -302,7 +240,7 @@ Bash
 
 npm install
 Create Environment File:
-Create a new file named .env in the src1 directory. This file will store your secret keys and database connection string. Add the following content to it:
+Create a new file named .env in the src directory. This file will store your secret keys and database connection string. Add the following content to it:
 
 Code snippet
 
@@ -314,10 +252,10 @@ JWT_SECRET=your_super_secret_jwt_key_that_is_long_and_random
 Important: If you're using MongoDB Atlas, get the connection string from your cluster's dashboard.
 
 Start the Backend Server:
+cd backend
+npm install
+npm run dev
 
-Bash
-
-npm start
 If everything is set up correctly, you should see a message in your terminal like:
 
 MongoDB connected ✅
